@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "itmofs-lab"
-version = "0.1.0"
+version = "0.1.1"
 description = "Interface simples e uniforme para seleção de características com a ITMO_FS: mesma API para todos os métodos, ajuda por método (o que entra/sai) e catálogo completo de filtros, ensembles e wrappers."
 readme = "README.md"
 requires-python = ">=3.9"

@@ -36,7 +36,7 @@ __all__ = [
     "itmo_version", "__version__",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def itmo_version() -> str:
