@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "itmofs-lab"
+version = "0.1.0"
+description = "Interface simples e uniforme para seleção de características com a ITMO_FS: mesma API para todos os métodos, ajuda por método (o que entra/sai) e catálogo completo de filtros, ensembles e wrappers."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Vinicius de Souza Santos", email = "vinicius-souza.santos@unesp.br" }]
+maintainers = [{ name = "Vinicius de Souza Santos", email = "vinicius-souza.santos@unesp.br" }]
+keywords = ["feature-selection", "ITMO_FS", "filters", "ensemble", "machine-learning", "scikit-learn"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "ITMO_FS>=0.3.3",
+    "numpy",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+docs = ["mkdocs", "mkdocs-material"]
+dev = ["pytest", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/ViniciusKanh/itmofs-lab"
+Repository = "https://github.com/ViniciusKanh/itmofs-lab"
+Documentation = "https://github.com/ViniciusKanh/itmofs-lab/tree/main/docs"
+Issues = "https://github.com/ViniciusKanh/itmofs-lab/issues"
+
+[project.scripts]
+itmofs-lab = "itmofs_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+itmofs_lab = ["py.typed"]

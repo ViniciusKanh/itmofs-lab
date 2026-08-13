@@ -1,0 +1,81 @@
+site_name: itmofs-lab
+site_description: Wrapper simples e uniforme sobre a ITMO_FS (filtros, ensembles, wrappers)
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: teal
+  features:
+    - navigation.expand
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+nav:
+  - Início: index.md
+  - Catálogo: catalog.md
+  - Métodos:
+    - Embedded:
+      - MOS / MOSS / MOSNS: methods/MOS.md
+    - Ensembles (baseados em medida):
+      - WeightBased: methods/WeightBased.md
+    - Ensembles (baseados em modelo):
+      - BestSum: methods/BestSum.md
+    - Ensembles (baseados em ranking):
+      - Mixed: methods/Mixed.md
+    - Filtros multivariados:
+      - CFR: methods/CFR.md
+      - CIFE: methods/CIFE.md
+      - CMIM: methods/CMIM.md
+      - DCSF: methods/DCSF.md
+      - DISR with Massive: methods/DISRWithMassive.md
+      - FCBF (discrete): methods/FCBFDiscreteFilter.md
+      - ICAP: methods/ICAP.md
+      - IWFS: methods/IWFS.md
+      - Joint Mutual Information: methods/JMI.md
+      - MIFS: methods/MIFS.md
+      - Mutual Information Maximization: methods/MIM.md
+      - MIMAGA: methods/MIMAGA.md
+      - MRI: methods/MRI.md
+      - mRMR: methods/MRMR.md
+      - STIR: methods/STIR.md
+      - Trace Ratio (Fisher): methods/TraceRatioFisher.md
+      - Generalized Criteria: methods/generalizedCriteria.md
+    - Filtros esparsos:
+      - MCFS: methods/MCFS.md
+      - NDFS: methods/NDFS.md
+      - RFS: methods/RFS.md
+      - SPEC: methods/SPEC.md
+      - UDFS: methods/UDFS.md
+    - Filtros univariados:
+      - Value Difference Metric: methods/VDM.md
+      - ANOVA F-test: methods/anova.md
+      - Chi-squared: methods/chi2_measure.md
+      - F-ratio (Fisher score): methods/f_ratio_measure.md
+      - Fechner correlation: methods/fechner_corr.md
+      - Fit Criterion: methods/fit_criterion_measure.md
+      - Gini index: methods/gini_index.md
+      - Information gain: methods/information_gain.md
+      - Kendall correlation: methods/kendall_corr.md
+      - Laplacian score: methods/laplacian_score.md
+      - Pearson correlation: methods/pearson_corr.md
+      - QPFS: methods/qpfs_filter.md
+      - ReliefF: methods/reliefF_measure.md
+      - Spearman correlation: methods/spearman_corr.md
+      - Symmetric Uncertainty: methods/su_measure.md
+    - Filtros não supervisionados:
+      - Trace Ratio (Laplacian): methods/TraceRatioLaplacian.md
+    - Híbridos:
+      - Filter+Wrapper Hybrid: methods/FilterWrapperHybrid.md
+      - Melif: methods/Melif.md
+    - Wrappers:
+      - Add-Del Wrapper: methods/AddDelWrapper.md
+      - Backward Selection: methods/BackwardSelection.md
+      - Hill Climbing: methods/HillClimbingWrapper.md
+      - Recursive Elimination: methods/RecursiveElimination.md
+      - Sequential Forward Selection: methods/SequentialForwardSelection.md
+      - Simulated Annealing: methods/SimulatedAnnealing.md
+      - Two-Phase Mutation GWO: methods/TPhMGWO.md

@@ -1,0 +1,33 @@
+# Build / distribuição
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.env
+
+# Testes / cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# MkDocs
+site/
+
+# Notas locais (não versionar)
+PUBLISHING.md
+NOTES*.md
+_to_delete/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store

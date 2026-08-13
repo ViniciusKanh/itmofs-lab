@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Se este software for útil na sua pesquisa, por favor cite-o."
+title: "itmofs-lab: interface uniforme e documentada para seleção de características com a ITMO_FS"
+type: software
+authors:
+  - family-names: "Santos"
+    given-names: "Vinicius de Souza"
+    email: "vinicius-souza.santos@unesp.br"
+    affiliation: "Universidade Estadual Paulista (UNESP), Rio Claro"
+version: "0.1.0"
+date-released: "2026-08-13"
+license: MIT
+url: "https://github.com/ViniciusKanh/itmofs-lab"
+keywords:
+  - feature selection
+  - ITMO_FS
+  - ensemble feature selection
+  - machine learning

@@ -211,7 +211,7 @@ documentação.
   author  = {Santos, Vinicius de Souza},
   title   = {itmofs-lab: uma interface uniforme e documentada para seleção de características com a ITMO_FS},
   year    = {2026},
-  url     = {https://github.com/ViniciusKhan/itmofs-lab}
+  url     = {https://github.com/ViniciusKanh/itmofs-lab}
 }
 ```
 
