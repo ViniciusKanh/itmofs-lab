@@ -6,5 +6,6 @@ from .RecursiveElimination import RecursiveElimination  # noqa: F401
 from .SequentialForwardSelection import SequentialForwardSelection  # noqa: F401
 from .SimulatedAnnealing import SimulatedAnnealing  # noqa: F401
 from .TPhMGWO import TPhMGWO  # noqa: F401
+from .qpfs_wrapper import QpfsWrapper  # noqa: F401
 
-__all__ = ["AddDelWrapper", "BackwardSelection", "HillClimbingWrapper", "RecursiveElimination", "SequentialForwardSelection", "SimulatedAnnealing", "TPhMGWO"]
+__all__ = ["AddDelWrapper", "BackwardSelection", "HillClimbingWrapper", "RecursiveElimination", "SequentialForwardSelection", "SimulatedAnnealing", "TPhMGWO", "QpfsWrapper"]

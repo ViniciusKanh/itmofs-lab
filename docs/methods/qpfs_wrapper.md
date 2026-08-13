@@ -1,9 +1,9 @@
-# QPFS  (`qpfs_filter`)
+# QPFS (wrapper)  (`qpfs_wrapper`)
 
-**Família:** `filters.univariate` — **tipo:** `score_function`  
+**Família:** `wrappers` — **tipo:** `wrapper_selector`  
 **Status na ITMO_FS 0.3.3:** `DEPENDENCY_MISSING` — Requer dependência externa ausente (ex.: solver de QP).
 
-Quadratic Programming Feature Selection.
+Quadratic Programming Feature Selection na forma de wrapper.
 
 ## O que entra
 
@@ -26,12 +26,12 @@ Quadratic Programming Feature Selection.
 ## Assinatura na ITMO_FS
 
 ```
-qpfs_filter(X, y, r, sigma, solv, fn)
+qpfs_wrapper(X, y, alpha, r=None, sigma=None, solv='quadprog', fn=pearson_corr)
 ```
 
 ## Atenções
 
-requer solver de QP (quadprog) ausente. Medida univariada (distinta do wrapper qpfs_wrapper).
+requer solver de QP (quadprog) ausente (SolverNotFound). Distinto de qpfs_filter (medida univariada).
 
 > ⚠️ Este método está **catalogado e documentado**, mas o status `DEPENDENCY_MISSING` indica que não executa nesta versão. Ver 'Atenções'.
 
@@ -39,7 +39,7 @@ requer solver de QP (quadprog) ausente. Medida univariada (distinta do wrapper q
 
 ```python
 import itmofs_lab as fs
-m = fs.get('qpfs_filter')
+m = fs.get('qpfs_wrapper')
 m.fit(X_train, y_train)      # ajusta SÓ no treino
 X_sel = m.transform(X_test)
 print(m.selected_names_)
@@ -48,8 +48,8 @@ print(m.selected_names_)
 Ajuda na linha de comando:
 
 ```bash
-itmofs-lab info qpfs_filter
-itmofs-lab run qpfs_filter --dataset breast_cancer
+itmofs-lab info qpfs_wrapper
+itmofs-lab run qpfs_wrapper --dataset breast_cancer
 ```
 
-**Referência ITMO_FS:** `filters.univariate`
+**Referência ITMO_FS:** `wrappers`

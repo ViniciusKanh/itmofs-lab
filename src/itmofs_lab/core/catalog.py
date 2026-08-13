@@ -48,6 +48,11 @@ _UNI = [
     ("anova", "ANOVA F-test", "Estatística F de ANOVA por feature."),
     ("laplacian_score", "Laplacian score", "Score laplaciano (não supervisionado); menor é melhor."),
 ]
+# Notas para símbolos presentes na 0.3.3 mas ausentes nos docs 0.3.2.
+_NOTE_033 = {
+    "anova": "Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2).",
+    "laplacian_score": "Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2); não supervisionado (menor é melhor).",
+}
 for name, disp, summ in _UNI:
     corr = name.endswith("_corr")
     _add(B.UnivariateScore, kwargs=dict(measure=name, k=10),
@@ -66,8 +71,8 @@ for name, disp, summ in _UNI:
                  "cutting_param": "parâmetro da cutting rule (k, percent, value)"},
          outputs_scores=True, outputs_ranking=True, outputs_subset=True,
          selected_attr="selected_", transforms_test=True, cutting_rule="obrigatória (via UnivariateFilter)",
-         quirks=("correlação com sinal: 'K best' usa score BRUTO — associações fortemente "
-                 "negativas podem ser ignoradas; considere magnitude." if corr else ""),
+         quirks=_NOTE_033.get(name, ("correlação com sinal: 'K best' usa score BRUTO — associações "
+                 "fortemente negativas podem ser ignoradas; considere magnitude." if corr else "")),
          example=f">>> from itmofs_lab import get\n>>> m = get('{name}', k=10).fit(X_train, y_train)\n>>> X_sel = m.transform(X_test); m.selected_names_",
          references="ITMO_FS.filters.univariate")
 
@@ -82,7 +87,8 @@ _add(B.BrokenMethod, name="fit_criterion_measure", display="Fit Criterion", fami
 _add(B.BrokenMethod, name="qpfs_filter", display="QPFS", family="filters.univariate",
      component_type="score_function", summary="Quadratic Programming Feature Selection.",
      itmo_symbol="qpfs_filter", itmo_signature="qpfs_filter(X, y, r, sigma, solv, fn)",
-     status="DEPENDENCY_MISSING", quirks="requer solver de QP (quadprog) ausente.")
+     status="DEPENDENCY_MISSING",
+     quirks="requer solver de QP (quadprog) ausente. Medida univariada (distinta do wrapper qpfs_wrapper).")
 
 # ============================================================ CRITÉRIOS multivariados
 _CRIT = [
@@ -283,6 +289,15 @@ for nm, disp, sig, q in [
     _add(B.BrokenMethod, name=nm, display=disp, family="wrappers",
          component_type="wrapper_selector", summary="Wrapper baseado em busca guiada por classificador.",
          itmo_symbol=nm, itmo_signature=sig, status=st, y="required", outputs_scores=False, quirks=q)
+
+# qpfs_wrapper — wrapper QPFS da API 0.3.2 (requer solver de QP, ausente).
+_add(B.BrokenMethod, name="qpfs_wrapper", display="QPFS (wrapper)", family="wrappers",
+     component_type="wrapper_selector",
+     summary="Quadratic Programming Feature Selection na forma de wrapper.",
+     itmo_symbol="qpfs_wrapper",
+     itmo_signature="qpfs_wrapper(X, y, alpha, r=None, sigma=None, solv='quadprog', fn=pearson_corr)",
+     status="DEPENDENCY_MISSING", y="required", outputs_scores=False,
+     quirks="requer solver de QP (quadprog) ausente (SolverNotFound). Distinto de qpfs_filter (medida univariada).")
 
 # ============================================================ APOIO
 _add(B.SupportComponent, name="VDM", display="Value Difference Metric", family="filters.univariate",

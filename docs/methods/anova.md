@@ -31,6 +31,10 @@ Estatística F de ANOVA por feature.
 anova(X, y)  |  UnivariateFilter('anova', ('K best', k))
 ```
 
+## Atenções
+
+Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2).
+
 ## Exemplo
 
 ```python

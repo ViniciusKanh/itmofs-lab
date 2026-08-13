@@ -79,3 +79,4 @@ nav:
       - Sequential Forward Selection: methods/SequentialForwardSelection.md
       - Simulated Annealing: methods/SimulatedAnnealing.md
       - Two-Phase Mutation GWO: methods/TPhMGWO.md
+      - QPFS (wrapper): methods/qpfs_wrapper.md

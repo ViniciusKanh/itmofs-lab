@@ -31,6 +31,10 @@ Score laplaciano (não supervisionado); menor é melhor.
 laplacian_score(X, y)  |  UnivariateFilter('laplacian_score', ('K best', k))
 ```
 
+## Atenções
+
+Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2); não supervisionado (menor é melhor).
+
 ## Exemplo
 
 ```python

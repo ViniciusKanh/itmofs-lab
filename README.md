@@ -109,7 +109,7 @@ depois, e escolha `k`/threshold **somente** por validação cruzada no treino.
 
 ## 📚 Documentação completa dos métodos
 
-> **51 métodos** catalogados e documentados.
+> **52 métodos** catalogados e documentados.
 
 Cobertura de **todas as famílias** da ITMO_FS. Clique para ir à seção:
 
@@ -122,7 +122,7 @@ Cobertura de **todas as famílias** da ITMO_FS. Clique para ir à seção:
 - **[🧠 Ensemble — baseado em modelos (BestSum)](#🧠 ensemble — baseado em modelos (bestsum))** — 1 método(s)
 - **[🔗 Híbridos](#🔗 híbridos)** — 2 método(s)
 - **[🌱 Embedded](#🌱 embedded)** — 1 método(s)
-- **[🎁 Wrappers](#🎁 wrappers)** — 7 método(s)
+- **[🎁 Wrappers](#🎁 wrappers)** — 8 método(s)
 
 ### 🔹 Filtros univariados
 
@@ -144,6 +144,7 @@ Estatística F de ANOVA por feature.
 - **Parâmetros:** `k` (nº de features a manter (cutting rule 'K best')) · `cutting_rule` (select_k_best|select_best_percentage|...) · `cutting_param` (parâmetro da cutting rule (k, percent, value))
 - **Sai:** score por feature ✅ · ranking ✅ · subconjunto ✅ · atributos após `fit`: `selected_`, `selected_names_`, `scores_`
 - **Assinatura ITMO_FS:** `anova(X, y)  |  UnivariateFilter('anova', ('K best', k))`
+- **Atenção:** Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2).
 
 ```python
 m = fs.get('anova', k=10).fit(X_train, y_train)
@@ -254,6 +255,7 @@ Score laplaciano (não supervisionado); menor é melhor.
 - **Parâmetros:** `k` (nº de features a manter (cutting rule 'K best')) · `cutting_rule` (select_k_best|select_best_percentage|...) · `cutting_param` (parâmetro da cutting rule (k, percent, value))
 - **Sai:** score por feature ✅ · ranking ✅ · subconjunto ✅ · atributos após `fit`: `selected_`, `selected_names_`, `scores_`
 - **Assinatura ITMO_FS:** `laplacian_score(X, y)  |  UnivariateFilter('laplacian_score', ('K best', k))`
+- **Atenção:** Presente na ITMO_FS 0.3.3 (não consta nos docs 0.3.2); não supervisionado (menor é melhor).
 
 ```python
 m = fs.get('laplacian_score', k=10).fit(X_train, y_train)
@@ -282,7 +284,7 @@ Quadratic Programming Feature Selection.
 - **Entra:** X ✅ · `y`: **obrigatório** · pré-processamento: nenhum obrigatório
 - **Sai:** score global ❌ · ranking ✅ · subconjunto ✅ · atributos após `fit`: `selected_`, `selected_names_`
 - **Assinatura ITMO_FS:** `qpfs_filter(X, y, r, sigma, solv, fn)`
-- **Atenção:** requer solver de QP (quadprog) ausente.
+- **Atenção:** requer solver de QP (quadprog) ausente. Medida univariada (distinta do wrapper qpfs_wrapper).
 - ⚠️ Catalogado e documentado, mas **não executável** nesta versão (`DEPENDENCY_MISSING`): ao chamar `fit` levanta `NotSupportedError` com o motivo.
 
 #### `reliefF_measure` — ReliefF  ·  🟢 OK
@@ -859,6 +861,16 @@ Wrapper baseado em busca guiada por classificador.
 - **Assinatura ITMO_FS:** `TPhMGWO(...).run(X,y)`
 - **Atenção:** usa np.float (removido no numpy>=1.24) -> AttributeError.
 - ⚠️ Catalogado e documentado, mas **não executável** nesta versão (`BROKEN_IN_0_3_3`): ao chamar `fit` levanta `NotSupportedError` com o motivo.
+
+#### `qpfs_wrapper` — QPFS (wrapper)  ·  🟠 dependência ausente
+
+Quadratic Programming Feature Selection na forma de wrapper.
+
+- **Entra:** X ✅ · `y`: **obrigatório** · pré-processamento: nenhum obrigatório
+- **Sai:** score global ❌ · ranking ✅ · subconjunto ✅ · atributos após `fit`: `selected_`, `selected_names_`
+- **Assinatura ITMO_FS:** `qpfs_wrapper(X, y, alpha, r=None, sigma=None, solv='quadprog', fn=pearson_corr)`
+- **Atenção:** requer solver de QP (quadprog) ausente (SolverNotFound). Distinto de qpfs_filter (medida univariada).
+- ⚠️ Catalogado e documentado, mas **não executável** nesta versão (`DEPENDENCY_MISSING`): ao chamar `fit` levanta `NotSupportedError` com o motivo.
 
 ---
 

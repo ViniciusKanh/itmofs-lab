@@ -7,7 +7,7 @@ authors:
     given-names: "Vinicius de Souza"
     email: "vinicius-souza.santos@unesp.br"
     affiliation: "Universidade Estadual Paulista (UNESP), Rio Claro"
-version: "0.1.1"
+version: "0.1.2"
 date-released: "2026-08-13"
 license: MIT
 url: "https://github.com/ViniciusKanh/itmofs-lab"

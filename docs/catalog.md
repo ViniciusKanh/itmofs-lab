@@ -102,3 +102,4 @@ Documentação completa de todos os métodos da ITMO_FS acessíveis pelo itmofs-
 | [`SequentialForwardSelection`](methods/SequentialForwardSelection.md) | `OK` | Adiciona sequencialmente a feature que mais melhora o classificador. |
 | [`SimulatedAnnealing`](methods/SimulatedAnnealing.md) | `LEAKAGE_BY_DESIGN` | Wrapper baseado em busca guiada por classificador. |
 | [`TPhMGWO`](methods/TPhMGWO.md) | `BROKEN_IN_0_3_3` | Wrapper baseado em busca guiada por classificador. |
+| [`qpfs_wrapper`](methods/qpfs_wrapper.md) | `DEPENDENCY_MISSING` | Quadratic Programming Feature Selection na forma de wrapper. |
