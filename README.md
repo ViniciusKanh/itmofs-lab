@@ -40,7 +40,7 @@ uma API heterogênea: algumas medidas são funções, outras são classes; umas 
 `fit/transform`, outras `run/feature_ranking`; as regras de corte operam sobre
 dicionários; e há bugs e requisitos que só aparecem em tempo de execução.
 
-O **itmofs-lab** é uma camada fina, uniforme e documentada por cima da ITMO_FS.
+O **itmofs-lab** é uma camada fina da ITMO_FS.
 Ele nasceu de um **estudo prático, sistemático e reprodutível** da biblioteca, no
 contexto de pesquisa de pós-graduação sobre **Ensemble Feature Selection**: cada
 método foi inspecionado em tempo de execução (assinatura real, atributos após
