@@ -1,8 +1,7 @@
 <h1 align="center">🧬 itmofs-lab</h1>
 
 <p align="center">
-  <strong>Seleção de características com a <a href="https://github.com/ctlab/ITMO_FS">ITMO_FS</a>,
-  simples de usar e honesta.</strong><br>
+  <strong>Seleção de características com a <a href="https://github.com/ctlab/ITMO_FS">ITMO_FS</a>.</strong><br>
   Uma API única para todos os métodos, um comando de ajuda que mostra
   <em>o que entra e o que sai</em>, e a documentação completa aqui no README.
 </p>

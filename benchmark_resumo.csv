@@ -1,0 +1,7 @@
+dataset,n_features,baseline,melhor_metodo,melhor_bal_acc,ganho
+breast_cancer,30,0.9282,BestSum,0.9657,+0.0375
+wine,13,0.9778,SPEC,1.0000,+0.0222
+iris,4,0.9333,Mixed,0.9333,+0.0000
+digits,64,0.9571,MRI,0.8705,-0.0867
+sintetico_bal,30,0.8278,Mixed,0.8444,+0.0166
+sintetico_desbal,30,0.5833,NDFS,0.6111,+0.0278
